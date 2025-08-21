@@ -235,7 +235,8 @@
 
         if (response.ok) {
   const result = await response.json();
-  window.location.href = 'home page.html';
+  sessionStorage.setItem('loggedIn', 'true');
+  window.location.href = 'index.html';
 } else if (response.status === 401 || response.status === 404) {
   // Always show this message on 401 - covers invalid email or password
   errorMsg.textContent = 'Invalid email or password';
